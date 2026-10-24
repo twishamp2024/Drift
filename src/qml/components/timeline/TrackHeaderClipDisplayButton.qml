@@ -5,7 +5,7 @@ import Drift
 IconGlyph {
     id: displayButton
 
-    property TrackHeaderColumn column
+    property QtObject column
     property int trackIndex: -1
     property int clipDisplay: 1
     property bool shown: false

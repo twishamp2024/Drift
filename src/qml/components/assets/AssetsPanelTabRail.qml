@@ -24,7 +24,9 @@ Flickable {
     clip: true
     boundsBehavior: Flickable.StopAtBounds
     interactive: contentHeight > height
+    // Hidden indicator only; Flickable drag/wheel scrolling is unaffected.
     ScrollBar.vertical: AppScrollBar {
+        visible: false
         policy: root.contentHeight > root.height
                 ? ScrollBar.AlwaysOn : ScrollBar.AsNeeded
     }

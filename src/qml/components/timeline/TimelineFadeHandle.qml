@@ -5,7 +5,7 @@ import Drift
 Rectangle {
     id: handle
 
-    required property TimelineClipItem owner
+    required property QtObject owner
     property bool outgoing: false
 
     readonly property bool areaContainsMouse: fadeMouse.containsMouse

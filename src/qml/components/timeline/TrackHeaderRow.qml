@@ -5,7 +5,7 @@ import Drift
 Item {
     id: trackLabelRow
 
-    property TrackHeaderColumn column
+    property QtObject column
     property var renameDialog
     property var deleteDialog
     required property int index

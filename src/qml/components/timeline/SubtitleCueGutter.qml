@@ -3,7 +3,7 @@ import Drift
 
 // Left gutter — matches track-label width so the lane lines up with the tracks.
 Item {
-    property SubtitleCueLane lane
+    property QtObject lane
     width: lane.labelsWidth
     height: parent.height
 

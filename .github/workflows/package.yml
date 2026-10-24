@@ -1480,13 +1480,21 @@ jobs:
           mkdir -p dist
           OUT="dist/Drift-${VERSION}-${ABI}.apk"
 
+          BT="$(ls -d "$ANDROID_SDK_ROOT"/build-tools/* | sort -V | tail -1)"
+
+          # A fork has no release keystore, and Android refuses to install an unsigned APK, so
+          # sign with a throwaway debug key instead. Updates need the same key, so a later run
+          # (new key) installs only after uninstalling the previous one.
           if [ -z "${KEYSTORE_B64:-}" ]; then
-            echo "::warning::ANDROID_KEYSTORE_BASE64 not set; uploading unsigned APK"
-            cp "$APK" "$OUT"
-            exit 0
+            echo "::warning::ANDROID_KEYSTORE_BASE64 not set; signing with a throwaway debug key"
+            KS="$RUNNER_TEMP/debug.jks"
+            export KEYSTORE_PASSWORD=android KEY_ALIAS=androiddebugkey
+            keytool -genkeypair -keystore "$KS" -storepass android -keypass android \
+              -alias androiddebugkey -keyalg RSA -keysize 2048 -validity 10000 \
+              -dname "CN=Android Debug,O=Android,C=US"
+            KEYSTORE_B64="$(base64 -w0 "$KS")"
           fi
 
-          BT="$(ls -d "$ANDROID_SDK_ROOT"/build-tools/* | sort -V | tail -1)"
           KS="$RUNNER_TEMP/release.jks"
           printf '%s' "$KEYSTORE_B64" | base64 -d > "$KS"
           "$BT/zipalign" -p -f 4 "$APK" "$RUNNER_TEMP/aligned.apk"

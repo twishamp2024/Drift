@@ -2,7 +2,7 @@ import QtQuick
 import Drift
 
 Item {
-    property NotificationList host
+    property QtObject host
     id: row
 
     required property int toastId

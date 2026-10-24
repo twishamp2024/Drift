@@ -45,7 +45,7 @@ Rectangle {
     required property bool expanded
     required property bool expandable
 
-    required property MediaAssetsTab host
+    required property QtObject host
 
     // Tree rows step in by depth, and every row leaves room for a disclosure
     // arrow so names still line up under folders that have none.

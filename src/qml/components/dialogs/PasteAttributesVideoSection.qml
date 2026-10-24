@@ -3,7 +3,7 @@ import Drift
 
 // Video Attributes Section
 Column {
-    required property PasteAttributesDialog dialog
+    required property QtObject dialog
     width: parent.width
     spacing: Theme.spacingSm
 

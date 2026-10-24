@@ -5,7 +5,7 @@ import Drift
 ThemedDialog {
     id: confirmDeleteTrack
 
-    property TrackHeaderColumn column
+    property QtObject column
     title: qsTr("Delete this track?")
     acceptText: qsTr("Delete track")
     acceptVariant: "destructive"

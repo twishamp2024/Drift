@@ -5,7 +5,7 @@ import QtQuick.Layouts
 // ---- Video mode ----
 Column {
     id: section
-    required property ExportDialog dialog
+    required property QtObject dialog
     property alias frameRateCombo: frameRateCombo
     property alias videoCodecCombo: videoCodecCombo
     property alias audioCodecCombo: audioCodecCombo

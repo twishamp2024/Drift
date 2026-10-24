@@ -5,7 +5,7 @@ import Drift
 Item {
     id: laneStrip
 
-    property TimelinePanel panel
+    property QtObject panel
     property Item timelineColumn
     property var viewState
     property real stripWidth: 0

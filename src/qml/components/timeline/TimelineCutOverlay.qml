@@ -5,7 +5,7 @@ import Drift
 Item {
     id: cutOverlay
 
-    property TimelinePanel panel
+    property QtObject panel
     visible: panel.timelineTool !== ""
     enabled: panel.timelineTool !== ""
     x: 0

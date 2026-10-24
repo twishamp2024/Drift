@@ -8,7 +8,7 @@ Item {
     required property int index
     required property var modelData
     property Item row
-    property TimelinePanel panel
+    property QtObject panel
 
     signal contextMenu(bool atPointer, Item anchor, real ax, real ay,
                        int bookmarkIndex, string label, real seconds)

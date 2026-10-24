@@ -7,7 +7,7 @@ import Drift
 Item {
     id: ruler
 
-    property TimelinePanel panel
+    property QtObject panel
     property Flickable view
 
     width: parent.width

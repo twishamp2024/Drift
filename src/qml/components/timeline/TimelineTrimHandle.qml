@@ -6,7 +6,7 @@ import Drift
 Rectangle {
     id: handle
 
-    required property TimelineClipItem owner
+    required property QtObject owner
     property int edge: -1
 
     readonly property bool areaContainsMouse: trimMouse.containsMouse

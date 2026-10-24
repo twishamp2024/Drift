@@ -20,7 +20,7 @@ Rectangle {
     required property real cardSize
     required property bool selected
     required property bool hovered
-    required property MediaAssetsTab host
+    required property QtObject host
 
     readonly property alias dragActive: assetDrag.active
     readonly property bool menusVisible: cardMenu.visible || folderMenu.visible

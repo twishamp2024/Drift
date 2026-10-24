@@ -2,7 +2,7 @@ import QtQuick
 import Drift
 
 ThemedCheckBox {
-    required property ExportDialog dialog
+    required property QtObject dialog
     width: parent.width
     visible: EditorState.workAreaActive
     text: qsTr("Export work area only (%1 – %2)")

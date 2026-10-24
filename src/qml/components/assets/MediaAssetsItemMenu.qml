@@ -4,7 +4,7 @@ import Drift
 ThemedContextMenu {
     id: root
 
-    required property MediaAssetsTab host
+    required property QtObject host
     required property string kind
     required property string assetId
     required property int assetIndex

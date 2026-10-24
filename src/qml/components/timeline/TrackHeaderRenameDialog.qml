@@ -5,7 +5,7 @@ import Drift
 ThemedDialog {
     id: renameTrackDialog
 
-    property TrackHeaderColumn column
+    property QtObject column
     property alias nameField: renameTrackField
     title: qsTr("Rename track")
     acceptText: qsTr("Rename")

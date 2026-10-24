@@ -5,7 +5,7 @@ import Drift
 ThemedContextMenu {
     id: clipContextMenu
 
-    required property TimelineClipItem owner
+    required property QtObject owner
     signal unloadRequested()
 
     property bool canPasteEffects: false

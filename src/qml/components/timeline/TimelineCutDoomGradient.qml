@@ -6,8 +6,8 @@ import Drift
 Rectangle {
     id: doomGradient
 
-    property TimelineCutOverlay host
-    property TimelinePanel panel
+    property QtObject host
+    property QtObject panel
     readonly property real bandLength: 80
     visible: host.trimMode && host.hoverClip !== null
              && panel.cutHoverSeconds >= 0
